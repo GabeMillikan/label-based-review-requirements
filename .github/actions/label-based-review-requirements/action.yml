@@ -1,12 +1,5 @@
 name: 'Review Requirements'
 description: 'Enforces review requirements based on the applied labels.'
-inputs:
-  labels:
-    description: 'multiline input in the format "{label}:{required reviews} + {optionally, a comma separated list of usernames who must be included}"'
-    required: true
-outputs:
-  time:
-    description: 'The time we greeted you'
 runs:
   using: 'node20'
   main: 'dist/index.js'
