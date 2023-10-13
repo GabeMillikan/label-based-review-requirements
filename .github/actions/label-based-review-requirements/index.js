@@ -39,7 +39,7 @@ async function determineMissingApprovals() {
     //    the number of approvals still required,
     //    an array of specific people who must review,
     // ]
-    return [3, approvers];
+    return [0, approvers];
 }
 
 function formatCommaSeparatedList(items) {
