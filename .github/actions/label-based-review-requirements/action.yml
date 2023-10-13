@@ -1,12 +1,11 @@
 name: 'Review Requirements'
 description: 'Enforces review requirements based on the applied labels.'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  labels:
+    description: 'multiline input in the format "{label}:{required reviews} + {optionally, a comma separated list of usernames who must be included}"'
     required: true
-    default: 'World'
 outputs:
-  time: # id of output
+  time:
     description: 'The time we greeted you'
 runs:
   using: 'node20'
