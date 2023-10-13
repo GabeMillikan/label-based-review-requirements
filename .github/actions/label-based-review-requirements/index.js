@@ -38,6 +38,8 @@ async function determineMissingApprovals() {
     //    the number of approvals still required,
     //    an array of specific people who must review,
     // ]
+    const approvals = await parseApprovers();
+
     return [1 - approvers.size, []];
 }
 
