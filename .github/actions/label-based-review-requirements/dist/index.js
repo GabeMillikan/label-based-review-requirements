@@ -30003,7 +30003,9 @@ const core = __nccwpck_require__(3370);
 const github = __nccwpck_require__(289);
 
 try {
-    console.log("HELLO WORLD!!");
+    console.log(`before`);
+    const octokit = github.getOctokit(core.getInput('token'));
+    console.log(`YOO ${octokit}`);
 } catch (error) {
     core.setFailed(error.message);
 }
