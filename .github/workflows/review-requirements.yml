@@ -1,5 +1,10 @@
 name: Reviews
-on: [pull_request, pull_request_review, label]
+on: 
+  pull_request:
+    types: [labeled, unlabeled, opened, reopened, synchronize, review_requested, review_request_removed]
+  pull_request_review:
+    types: [submitted, edited, dismissed]
+
 
 jobs:
   check_review_requirements:
