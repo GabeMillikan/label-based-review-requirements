@@ -30039,19 +30039,7 @@ async function determineMissingApprovals() {
     //    the number of approvals still required,
     //    an array of specific people who must review,
     // ]
-
-    const approvers = await parseApprovers();
-    const requirements = new Set(['KhronosDevelopment']);
-
-    // why doesn't javascript have builtin set operations?
-    const missing = [];
-    for (const requirement of requirements) {
-        if (!approvers.has(requirement)) {
-            missing.push(requirement);
-        }
-    }
-
-    return [0, missing];
+    return [1 - approvers.size, []];
 }
 
 function formatCommaSeparatedList(items) {
