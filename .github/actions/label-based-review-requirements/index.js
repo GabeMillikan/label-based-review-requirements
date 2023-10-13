@@ -39,7 +39,8 @@ async function determineMissingApprovals() {
     //    the number of approvals still required,
     //    an array of specific people who must review,
     // ]
-    return [0, approvers];
+
+    return [0, Array.from(approvers)];
 }
 
 function formatCommaSeparatedList(items) {
@@ -81,7 +82,7 @@ async function determineFailureReason() { // describes the reason why the check 
         return null;
     }
 
-    return `Review ${missingCount} - ${missingPeople.length} is still required from: ${formatMissingApprovals(missingCount, missingPeople)}`;
+    return `Review is still required from: ${formatMissingApprovals(missingCount, missingPeople)}`;
 };
 
 determineFailureReason()
