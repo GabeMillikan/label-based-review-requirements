@@ -30045,7 +30045,7 @@ async function determineMissingApprovals() {
 
     // why doesn't javascript have builtin set operations?
     const missing = [];
-    for (const requirement in requirements) {
+    for (const requirement of requirements) {
         if (!approvers.has(requirement)) {
             missing.push(requirement);
         }
