@@ -1,0 +1,13 @@
+on: [pull_request]
+
+jobs:
+  check_review_requirements:
+    runs-on: ubuntu-latest
+    name: Ensure Correct Reviewers Approved
+    steps:
+      - name: Checkout Latest Code
+        uses: actions/checkout@v4
+      - name: Check Review Requirements
+        uses: .github/actions/label-based-review-requirements
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}

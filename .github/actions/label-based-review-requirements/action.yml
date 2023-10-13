@@ -1,5 +1,9 @@
 name: 'Review Requirements'
 description: 'Enforces review requirements based on the applied labels.'
+inputs:
+  token:
+    description: GitHub Access Token. Will be used to fetch PR reviews.
+    required: true
 runs:
   using: 'node20'
   main: 'dist/index.js'
