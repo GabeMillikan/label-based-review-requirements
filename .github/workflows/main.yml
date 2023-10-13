@@ -5,5 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
+      - name: Checkout Latest Code
+        uses: actions/checkout@v4
       - name: Check Review Requirements
         uses: ./.github/actions/label-based-review-requirements
