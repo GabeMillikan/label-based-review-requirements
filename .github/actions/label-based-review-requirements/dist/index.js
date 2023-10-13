@@ -30040,7 +30040,7 @@ async function determineMissingApprovals() {
     //    the number of approvals still required,
     //    an array of specific people who must review,
     // ]
-    return [3, ["GabeMillikan", "Another-Person"]];
+    return [3, approvers];
 }
 
 function formatCommaSeparatedList(items) {
@@ -30062,7 +30062,7 @@ function formatMissingApprovals(count, people) {
     const requirements = [];
 
     if (count !== 0) {
-        requirements.push(`at least ${count} code ${count == 1 ? 'owner' : 'owners'}`);
+        requirements.push(`at least ${count} additional code ${count == 1 ? 'owner' : 'owners'}`);
     }
 
     if (people.length !== 0) {
