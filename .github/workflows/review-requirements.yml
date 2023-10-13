@@ -8,6 +8,6 @@ jobs:
       - name: Checkout Latest Code
         uses: actions/checkout@v4
       - name: Check Review Requirements
-        uses: ./.github/actions/label-based-review-requirements
+        uses: .github/actions/label-based-review-requirements
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
