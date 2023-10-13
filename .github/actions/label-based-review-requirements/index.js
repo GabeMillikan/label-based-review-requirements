@@ -84,14 +84,15 @@ async function determineFailureReason() { // describes the reason why the check 
     return `Review is still required from: ${formatMissingApprovals(missingCount, missingPeople)}`;
 };
 
-try {
-    const failureReason = await determineFailureReason();
-    if (failureReason) {
-        core.setFailed(failureReason);
-    } else {
-        console.log("All required reviewers approved!");
-    }
-} catch (e) {
-    core.setFailed(e.message);
-    core.info(err.stack);
-}
+determineFailureReason()
+    .then(failureReason => {
+        if (failureReason) {
+            core.setFailed(failureReason);
+        } else {
+            console.log("All required reviewers approved!");
+        }
+    })
+    .catch(e => {
+        core.setFailed(e.message);
+        core.info(err.stack);
+    });
