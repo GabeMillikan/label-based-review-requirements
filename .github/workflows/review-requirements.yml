@@ -1,9 +1,13 @@
-on: [pull_request, pull_request_review]
+name: Reviews
+on:
+  pull_request_review:
+  pull_request:
+    types: [ opened, reopened, synchronize ]
 
 jobs:
   check_review_requirements:
     runs-on: ubuntu-latest
-    name: Ensure Correct Reviewers Approved
+    name: Check Requirements
     steps:
       - name: Checkout Latest Code
         uses: actions/checkout@v4
